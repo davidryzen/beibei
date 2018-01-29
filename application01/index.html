@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>贝贝生活日记</title>
+	<link rel="stylesheet" href="style/indexStyle.css">
+	<script type="text/javascript" src="style/jquery-3.1.1.js"></script>
+
+</head>
+<body>
+	<!--头部开始-->
+	<div class="head01"></div>
+	 <div class="head02">
+       <ul class="headUl01">
+         <li><a href="">首页</a></li>
+         <li><a href="">品牌介绍</a></li>
+         <li><a href="">贝贝新闻</a></li>
+         <li><a href="">4.0工厂</a></li>
+         <li><a href="">产品展厅</a></li>
+         <li><a href="">加盟优势</a></li>
+         <li><a href="">联系我们</a></li>
+       </ul>
+	 </div>
+	<!--头部结束-->
+
+	<!--轮播1开始-->
+	<div class="scrollAll01">
+	 <div class="coverImageFont"></div>
+       <div class="scroll scroll01"></div>
+       <div class="scroll scroll02"></div>
+       <div class="scroll scroll03"></div>
+       <div class="scroll scroll04"></div>
+       <div class="scroll scroll05"></div>
+       <div class="scroll scroll06"></div>
+       <div class="scroll scroll07"></div>
+       <div class="scroll scroll08"></div>
+       <div class="scroll scroll09"></div>
+       <div class="scroll scroll10"></div>
+      
+	</div>
+
+	  
+     
+	<!--轮播1结束-->
+
+	<!--轮播2开始-->
+        <div class="scrollAll02">
+            <div class="left"></div>
+            <div class="right"></div>
+
+            <div class="scrollAll01" >
+	 
+		       <div class="scrollSecond">
+		            <img src="images/diaperFont.png" alt="" class="imgTitle" style="display: none">
+
+					<img class="imgBody" src="images/diaper.png" alt="">
+		       </div>
+		       <div class="scrollSecond">
+		           <img src="images/trainF02.png" alt="" class="imgTitle" >
+					<img class="imgBody" src="images/male.png" alt="">
+		       </div>
+		       <div class="scrollSecond">
+		            <img src="images/trainM02.png" alt="" class="imgTitle" style="display: none">
+					<img class="imgBody" src="images/female.png" alt="">
+		       </div>
+                 		      
+		       
+                 
+		       
+                 
+		       
+		      
+            </div>
+        </div> 
+	<!--轮播2结束-->
+</body>
+<script>
+var scrollObjs=[$(".scroll01"),$(".scroll02"),$(".scroll03"),$(".scroll04"),$(".scroll05"),$(".scroll06"),$(".scroll07"),$(".scroll08"),$(".scroll09"),$(".scroll10")];
+// $(".head01").css("border","1px solid red")
+
+// $(".scroll01").css("background-image","url(images/001.jpg)");
+/*$(document).ready(function(){
+	
+	
+	$.each(scrollObjs,function(k,v){
+       scrollImages(v);
+       window.setTimeout(function(){},2000);
+       scrollObjs.css("display","none")
+	});	
+		
+		
+});*/
+var i=9;
+var flag=true;//图片是否全部隐藏完
+window.setInterval("scrollImages(scrollObjs)",3000);
+function scrollImages(arr){
+	
+	if(flag){
+         arr[i].fadeOut("slow");
+         arr[i].css("z-index",0);
+         --i;
+         if(i==0){
+          flag=false;
+        }
+         
+	}else{
+		 
+		 arr[i].fadeIn("slow");
+		 arr[i].css("z-index",1);
+		 ++i;
+		if(i==10){
+          flag=true;
+          i=9;
+        }
+	}
+
+	console.log(i);
+	console.log(flag);
+
+	
+}
+/*function hideImages(arr){
+	for(var i=0 ;i<arr.length;++i){
+      arr[i].fadeIn("slow");
+	}
+	
+	}*/
+
+
+</script>
+</html>

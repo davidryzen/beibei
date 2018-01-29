@@ -1,0 +1,36 @@
+html,body,div,img,ul,li{margin:0;padding:0;}
+body{}
+.head01{height:163px;min-width:1900px;background-image: url(../images/head01.jpg);}
+.head02{height:45px;min-width:1900px;background-color:#70CBE0;}
+
+.headUl01{borde: 1px solid;width: 50%;height:70%;margin:auto;}
+.headUl01 li{float: left;list-style:none; font-weight: bolder;letter-spacing: 3px;font-family:sans-serif;
+	width:124px;height: 80%;text-align:center;border-right:1px #fff solid;}
+.headUl01 li a{color:#fff;text-decoration:none;}
+
+.scrollAll01{borde: 1px red solid;height: 858px;min-width:1900px;position:relative;}
+.scrollAll01 .coverImageFont{width:100%;height:858px;z-index: 3;background-image: url(../images/floatText.png);position: absolute}
+.scroll{width:100%;height: 858px;position: absolute;borde: 1px red solid;;background-size: 100% 100%}
+.scrollAll01 .scroll01{background-image: url(../images/001.jpg);borde: 1px red solid}
+.scrollAll01 .scroll02{background-image: url(../images/002.jpg)}
+.scrollAll01 .scroll03{background-image: url(../images/003.jpg)}
+.scrollAll01 .scroll04{background-image: url(../images/004.jpg)}
+.scrollAll01 .scroll05{background-image: url(../images/005.jpg)}
+.scrollAll01 .scroll06{background-image: url(../images/006.jpg)}
+.scrollAll01 .scroll07{background-image: url(../images/007.jpg)}
+.scrollAll01 .scroll08{background-image: url(../images/010.jpg)}
+.scrollAll01 .scroll09{background-image: url(../images/009.jpg)}
+.scrollAll01 .scroll10{background-image: url(../images/008.jpg)}
+
+
+.scrollAll02{min-width:1900px;height: 873px;background-image: url(../images/desk.png);position:relative;padding-top: 50px}
+.scrollAll02 .left,.scrollAll02 .right{width: 92px;height: 180px;position:absolute;}
+.scrollAll02 .left{background-image: url(../images/left.png);left: 20%;top:23%;}
+.scrollAll02 .right{background-image: url(../images/right.png);right: 20%;top:23%;}
+.scrollSecond{width:42%;height: 473px;position: absolute;borde: 1px red solid;left:28.5%;padding-bottom: 0;}
+.scrollSecond .imgBody{position: absolute;bottom:0;right:5%;}
+.scrollSecond .imgTitle{position: absolute;left: 2.5%;top: 9%;}
+
+/* .scrollAll01 .scroll11{background-image: url(../images/diaper.png)}
+.scrollAll01 .scroll12{background-image: url(../images/female.png)}
+.scrollAll01 .scroll13{background-image: url(../images/males.png)} */
