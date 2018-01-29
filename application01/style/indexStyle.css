@@ -24,13 +24,21 @@ body{}
 
 
 .scrollAll02{min-width:1900px;height: 873px;background-image: url(../images/desk.png);position:relative;padding-top: 50px}
-.scrollAll02 .left,.scrollAll02 .right{width: 92px;height: 180px;position:absolute;}
+.scrollAll02 .left,.scrollAll02 .right{width: 92px;height: 180px;position:absolute;z-index: 2}
 .scrollAll02 .left{background-image: url(../images/left.png);left: 20%;top:23%;}
 .scrollAll02 .right{background-image: url(../images/right.png);right: 20%;top:23%;}
-.scrollSecond{width:42%;height: 473px;position: absolute;borde: 1px red solid;left:28.5%;padding-bottom: 0;}
-.scrollSecond .imgBody{position: absolute;bottom:0;right:5%;}
-.scrollSecond .imgTitle{position: absolute;left: 2.5%;top: 9%;}
+.scrollSecond{width:49%;height: 473px;position: absolute;borde: 1px red solid;left:26.9%;padding-bottom: 0;}
+.scrollSecond .imgBody{position: absolute;bottom:0;right:18%;}
+.scrollSecond .imgTitle{position: absolute;left: 5.5%;top: 11%;}
+.scrollSecond .imgFoot{margin-top:59.9%;borde: 10px tomato solid;}
+.scrollSecond .imgFootItem02{margin-left:00px;}
+.scrollSecond .coverGray{width: 901px;height: 131px;background-color: rgba(100,100,100,.7);margin-top: 60%;position: absolute;z-index: 99}
+.scrollAll02 .footImages{borde: 1px pink solid;width: 909px;height: 129px;position: absolute;top:65%;left:27%;}
 
 /* .scrollAll01 .scroll11{background-image: url(../images/diaper.png)}
 .scrollAll01 .scroll12{background-image: url(../images/female.png)}
 .scrollAll01 .scroll13{background-image: url(../images/males.png)} */
+.brand{width: 1920px;height:889px;background-image: url(../images/brand.jpg);}
+
+.scrollAll01 .scroll11{background-image: url(../images/product01.png);borde: 1px red solid}
+.scrollAll01 .scroll12{background-image: url(../images/product02.png)}

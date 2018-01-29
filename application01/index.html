@@ -48,76 +48,105 @@
             <div class="left"></div>
             <div class="right"></div>
 
-            <div class="scrollAll01" >
-	 
-		       <div class="scrollSecond">
-		            <img src="images/diaperFont.png" alt="" class="imgTitle" style="display: none">
+            <div class="scrollAll01">
+
+
+
+	           <div class="scrollSecond scrollSecondItem01">
+		            <img src="images/diaperFont.png" alt="" class="imgTitle" >
 
 					<img class="imgBody" src="images/diaper.png" alt="">
+
+					<!--  <img  src="images/diaperFoot.png" alt="" class="imgFoot imgFootItem01"> <img style="opacity: .6" src="images/trainMFoot.png" alt="" style="opacity: .6" class="imgFoot imgFootItem02"> <img src="images/trainFFoot.png" alt="" style="opacity: .6" class="imgFoot imgFootItem03"> <img src="images/sampleFoot.png" alt="" style="opacity: .6" class="imgFoot imgFootItem04">  -->
+					<!-- <div class="coverGray"></div> -->
 		       </div>
-		       <div class="scrollSecond">
-		           <img src="images/trainF02.png" alt="" class="imgTitle" >
+		       <div class="scrollSecond scrollSecondItem02" style="display:none;">
+		           <img src="images/trainM02.png" alt="" class="imgTitle" >
 					<img class="imgBody" src="images/male.png" alt="">
+					<!-- <img style="opacity: .6" src="images/diaperFoot.png" alt="" class="imgFoot imgFootItem01"> <img src="images/trainMFoot.png" alt="" class="imgFoot imgFootItem02"> <img src="images/trainFFoot.png" alt="" style="opacity: .6" class="imgFoot imgFootItem03"> <img src="images/sampleFoot.png" alt="" style="opacity: .6" class="imgFoot imgFootItem04"> -->
 		       </div>
-		       <div class="scrollSecond">
-		            <img src="images/trainM02.png" alt="" class="imgTitle" style="display: none">
+		       <div class="scrollSecond scrollSecondItem03" style="display:none">
+		            <img src="images/trainF02.png" alt="" class="imgTitle" >
 					<img class="imgBody" src="images/female.png" alt="">
+					<!-- <img src="images/diaperFoot.png" alt="" style="opacity: .6" class="imgFoot imgFootItem01"> <img src="images/trainMFoot.png" alt="" style="opacity: .6" class="imgFoot imgFootItem02"> <img src="images/trainFFoot.png" alt="" class="imgFoot imgFootItem03"> <img src="images/sampleFoot.png" alt="" style="opacity: .6" class="imgFoot imgFootItem04"> -->
 		       </div>
-                 		      
-		       
-                 
-		       
-                 
-		       
+		       <div class="scrollSecond scrollSecondItem04" style="display:none">
+		            <img src="images/sampleFont.png" alt="" class="imgTitle" >
+					<img class="imgBody" src="images/sampleImage.png" alt="">
+					<!-- <img src="images/diaperFoot.png" alt="" style="opacity: .6" class="imgFoot imgFootItem01"> <img src="images/trainMFoot.png" alt="" style="opacity: .6" class="imgFoot imgFootItem02"> <img src="images/trainFFoot.png" alt="" style="opacity: .6" class="imgFoot imgFootItem03"> <img src="images/sampleFoot.png" alt="" class="imgFoot imgFootItem04"> -->
+		       </div>
+                 	
+                 	<div class="footImages" >
+                        <img onmouseover="scrollImages05(0)"  src="images/diaperFoot.png"  alt="" class="imgFoot imgFootItem01"> <img onmouseover="scrollImages05(1)" style="opacity:.5 " src="images/trainMFoot.png" alt=""  class="imgFoot imgFootItem02"> <img onmouseover="scrollImages05(2)" style="opacity:.5 " src="images/trainFFoot.png" alt=""  class="imgFoot imgFootItem03"> <img style="opacity:.5 " onmouseover="scrollImages05(3)" src="images/sampleFoot.png" alt=""  class="imgFoot imgFootItem04">
+                 	</div>	      
+		                        		         
 		      
             </div>
         </div> 
 	<!--轮播2结束-->
+	<!--品牌介绍-->
+	<div class="brand">	</div>
+
+	<!--轮播3开始-->
+	<div class="scrollAll01">
+	
+       <div class="scroll scroll11"></div>
+       <div class="scroll scroll12"></div>
+
+       
+      
+	</div>
+
+	  
+     
+	<!--轮播3结束-->
 </body>
 <script>
-var scrollObjs=[$(".scroll01"),$(".scroll02"),$(".scroll03"),$(".scroll04"),$(".scroll05"),$(".scroll06"),$(".scroll07"),$(".scroll08"),$(".scroll09"),$(".scroll10")];
+
+//鼠标放在某一个图片上显示相应的轮播图
+/*function scrollImages05(id){
+    console.log(id);
+}*/
+
+
+
+var scrollObjs01=[$(".scroll01"),$(".scroll02"),$(".scroll03"),$(".scroll04"),$(".scroll05"),$(".scroll06"),$(".scroll07"),$(".scroll08"),$(".scroll09"),$(".scroll10")];
 // $(".head01").css("border","1px solid red")
 
 // $(".scroll01").css("background-image","url(images/001.jpg)");
 /*$(document).ready(function(){
 	
 	
-	$.each(scrollObjs,function(k,v){
+	$.each(scrollObjs01,function(k,v){
        scrollImages(v);
        window.setTimeout(function(){},2000);
-       scrollObjs.css("display","none")
+       scrollObjs01.css("display","none")
 	});	
 		
 		
 });*/
 var i=9;
-var flag=true;//图片是否全部隐藏完
-window.setInterval("scrollImages(scrollObjs)",3000);
-function scrollImages(arr){
+var flag01=true;//图片是否全部隐藏完
+var t01=window.setInterval("scrollImages01(scrollObjs01)",2500);
+function scrollImages01(arr){
 	
-	if(flag){
+	if(flag01){
          arr[i].fadeOut("slow");
-         arr[i].css("z-index",0);
          --i;
+
          if(i==0){
-          flag=false;
+          flag01=false;
         }
          
 	}else{
 		 
 		 arr[i].fadeIn("slow");
-		 arr[i].css("z-index",1);
 		 ++i;
 		if(i==10){
-          flag=true;
+          flag01=true;
           i=9;
         }
 	}
-
-	console.log(i);
-	console.log(flag);
-
-	
 }
 /*function hideImages(arr){
 	for(var i=0 ;i<arr.length;++i){
@@ -125,7 +154,133 @@ function scrollImages(arr){
 	}
 	
 	}*/
+var scrollObjs02=[$(".scrollSecondItem01"),$(".scrollSecondItem02"),$(".scrollSecondItem03"),$(".scrollSecondItem04")];
+
+//底部图片
+var footImagesObj01=[$(".imgFootItem01"),$(".imgFootItem02"),$(".imgFootItem03"),$(".imgFootItem04")];
+var j=1;
 
 
+
+      // scrollObjs02[0].css("display","block");
+
+function scrollImages02(arr){//自动轮播方法
+   for(var i=0;i<arr.length;++i){
+      arr[i].css("display","none");
+      footImagesObj01[i].css("opacity",.6);
+   }
+
+	
+	/*console.log(flag02);*/
+	
+         arr[j].fadeIn("slow");
+          footImagesObj01[j].css("opacity",1);
+                 ++j;
+         if(j==4){
+          
+          j=0;
+        }
+
+	
+}
+var flag=true;
+
+function scrollImages03(arr){//向左点击轮播方法
+	if(flag){
+       j-=1;
+       flag=false;
+	}
+   for(var i=0;i<arr.length;++i){
+      arr[i].css("display","none");
+      footImagesObj01[i].css("opacity",.6);
+   }
+	console.log(j);	
+	      --j;
+	      if(j==-1){
+          
+          j=3;
+        }
+         arr[j].fadeIn("slow");
+          footImagesObj01[j].css("opacity",1);              
+         
+         
+	
+}
+var isRight=false;
+function scrollImages04(arr){//向右点击轮播方法
+	if(isRight){
+      j+=1;
+      isRight=false;
+	}
+	console.log(isRight);
+   for(var i=0;i<arr.length;++i){
+      arr[i].css("display","none");
+      footImagesObj01[i].css("opacity",.6);
+   }
+
+	// console.log("f"+j);
+	/*console.log(flag02);*/
+	
+         arr[j].fadeIn("slow");
+          footImagesObj01[j].css("opacity",1);
+                 ++j;
+         if(j==4){
+          
+          j=0;
+        }
+     // console.log("s"+j);    
+	
+}
+
+function scrollImages05(id){//自动轮播方法
+	var scrollObjs02=[$(".scrollSecondItem01"),$(".scrollSecondItem02"),$(".scrollSecondItem03"),$(".scrollSecondItem04")];
+   for(var i=0;i<scrollObjs02.length;++i){
+      scrollObjs02[i].css("display","none");
+      footImagesObj01[i].css("opacity",.6);
+   }
+
+	
+	// console.log(id);
+	
+         scrollObjs02[id].fadeIn("slow");
+        
+}
+
+function stopScroll(t){//停止interval
+   window.clearInterval(t);
+   t=0;
+
+}
+var t02=0;
+$(function(){
+	var t02=window.setInterval("scrollImages02(scrollObjs02)",2500);
+	$(".left").click(function(){
+		// console.log("left");
+		stopScroll(t02);
+		scrollImages03(scrollObjs02);
+	});
+	$(".left").mouseout(function(){
+		stopScroll(t02);
+		t02=window.setInterval("scrollImages02(scrollObjs02)",2500);
+	});
+	$(".right").mouseout(function(){
+		stopScroll(t02);
+		t02=window.setInterval("scrollImages02(scrollObjs02)",2500);
+	});
+	$(".right").click(function(){
+		
+		// console.log("right");
+		stopScroll(t02);
+		scrollImages04(scrollObjs02);
+	});
+	$(".imgFoot").mouseover(function(){
+		stopScroll(t02);
+          $(this).css("opacity",1);	
+	});
+	$(".imgFoot").mouseout(function(){
+		stopScroll(t02);
+		t02=window.setInterval("scrollImages02(scrollObjs02)",2500);
+	});
+});
 </script>
 </html>
