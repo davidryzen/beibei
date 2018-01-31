@@ -8,17 +8,18 @@
 
 </head>
 <body>
+
 	<!--头部开始-->
-	<div class="head01"></div>
+	<div id="topPart" class="head01"><span class="backPart"><a href="#topPart"></a></span></div>
 	 <div class="head02">
        <ul class="headUl01">
          <li><a href="">首页</a></li>
-         <li><a href="">品牌介绍</a></li>
+         <li><a href="#bra">品牌介绍</a></li>
          <li><a href="">贝贝新闻</a></li>
-         <li><a href="">4.0工厂</a></li>
-         <li><a href="">产品展厅</a></li>
-         <li><a href="">加盟优势</a></li>
-         <li><a href="">联系我们</a></li>
+         <li><a href="#f4">4.0工厂</a></li>
+         <li><a href="#sellingpoints">产品展厅</a></li>
+         <li><a href="#superior">加盟优势</a></li>
+         <li><a href="#contact">联系我们</a></li>
        </ul>
 	 </div>
 	<!--头部结束-->
@@ -44,7 +45,7 @@
 	<!--轮播1结束-->
 
 	<!--轮播2开始-->
-        <div class="scrollAll02">
+        <div id="sellingpoints" class="scrollAll02">
             <div class="left"></div>
             <div class="right"></div>
 
@@ -85,7 +86,7 @@
         </div> 
 	<!--轮播2结束-->
 	<!--品牌介绍-->
-	<div class="brand">	</div>
+	<div class="brand" id="bra">	</div>
 
 	<!--轮播3开始-->
 	<div class="scrollAll01">
@@ -100,6 +101,66 @@
 	  
      
 	<!--轮播3结束-->
+
+	<!--产品卖点开始-->
+	<div  class="sellingPoint">
+	  <div class="positionCenter">
+	   <div class="sellingItem sellingItem01">
+           <img src="images/product03.png" alt="">
+	   </div>
+       <div class="sellingItem sellingItem02">
+         <img src="images/product04.png" alt="">
+       </div>
+       <div class="sellingItem sellingItem03">
+          <img src="images/product05.png" alt="">
+       </div>
+       <div class="sellingItem sellingItem04">
+          <img src="images/product06.png" alt="">
+       </div>
+	  </div>
+       
+	</div>
+	<!--产品卖点结束-->
+
+	<!--产品亮点开始-->
+	 <img class="singleImage"  src="images/product09.png" alt="">
+	<div id="f4" class="brightSpot">
+        
+       <img  class="elephant" src="images/elephant.png" alt="">
+	</div>
+	<!--产品亮点结束-->
+
+	<!--工厂轮播开始-->
+       <!--轮播3开始-->
+	<div class="scrollAll01">
+	
+       <div class="scroll scroll11 scroll13"></div>
+       <div class="scroll scroll12 scroll14"></div>
+
+       
+      
+	</div>
+
+	  
+     
+	<!--轮播3结束-->
+
+	<!--工厂轮播结束-->
+	<img id="superior" class="singleImage" src="images/end01.jpg" alt="">
+	<img class="singleImage" src="images/end02.png" alt="">
+
+	<div class="footer">
+		<ul id="contact" class="ul02">
+			<li><a href="">回到顶部</a></li>
+			<li><a href="">品牌介绍</a></li>
+			<li><a href="">产品展厅</a></li>
+			<li><a href="">加盟优势</a></li>
+			<li><a href="">4.0工厂</a></li>
+		</ul>
+	</div>
+
+
+	
 </body>
 <script>
 
@@ -167,7 +228,7 @@ var j=1;
 function scrollImages02(arr){//自动轮播方法
    for(var i=0;i<arr.length;++i){
       arr[i].css("display","none");
-      footImagesObj01[i].css("opacity",.6);
+      footImagesObj01[i].css("opacity",.5);
    }
 
 	
@@ -232,8 +293,8 @@ function scrollImages04(arr){//向右点击轮播方法
 	
 }
 
-function scrollImages05(id){//自动轮播方法
-	var scrollObjs02=[$(".scrollSecondItem01"),$(".scrollSecondItem02"),$(".scrollSecondItem03"),$(".scrollSecondItem04")];
+function scrollImages05(id){//鼠标放在底部的图标上,在上部显示相应的图片，id鼠标放在相应的标签上是传递过来的id
+	var scrollObjs02=[$(".scrollSecondItem01"),$(".scrollSecondItem02"),$(".scrollSecondItem03"),$(".scrollSecondItem04")];//所有在桌面上要显示的图片
    for(var i=0;i<scrollObjs02.length;++i){
       scrollObjs02[i].css("display","none");
       footImagesObj01[i].css("opacity",.6);
@@ -246,9 +307,31 @@ function scrollImages05(id){//自动轮播方法
         
 }
 
+
+
+function scrollImages06(arr){//children自动轮播方法
+   for(var i=0;i<arr.length;++i){
+      arr[i].css("display","none");
+     
+   }
+
+	
+	/*console.log(flag02);*/
+	
+         arr[j02].fadeIn("slow");
+         
+                 ++j02;
+         if(j02==2){
+          
+          j02=0;
+        }
+
+	
+}
+
 function stopScroll(t){//停止interval
    window.clearInterval(t);
-   t=0;
+   t=null;
 
 }
 var t02=0;
@@ -275,6 +358,7 @@ $(function(){
 	});
 	$(".imgFoot").mouseover(function(){
 		stopScroll(t02);
+		console.log("over :"+t02);
           $(this).css("opacity",1);	
 	});
 	$(".imgFoot").mouseout(function(){
@@ -282,5 +366,35 @@ $(function(){
 		t02=window.setInterval("scrollImages02(scrollObjs02)",2500);
 	});
 });
+var j02=0;
+var scrollObjs03=[$(".scroll11"),$(".scroll12")];
+window.setInterval("scrollImages06(scrollObjs03)",2500);
+
+//距离顶部一定的距离出现动画
+$(window).scroll(function(){
+    if($(window).scrollTop()>=6200){
+        
+        // $(".elephant").animate({left:50%},1000);
+         $(".elephant").animate({left:'-760px'},1500);
+    }
+    
+   /* if($(window).scrollTop()<=200){
+       $(".backPart").animate({right:'-46px'},100);
+       console.log("距离顶部大于2500");
+    }*/
+
+    if($(window).scrollTop()>600){
+       $(".backPart").animate({right:'0'});
+       // console.log("距离顶部大于2500");
+    }
+});
+$(window).scroll(function(){
+     if($(window).scrollTop()==380){
+       $(".backPart").animate({right:'-40px'},100);
+       console.log("距离顶部大于3500");
+    }
+});
+
+
 </script>
 </html>
